@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:test_project/utils/router.dart';
+import 'package:test_project/view/screen_two/home_view.dart';
 import 'package:test_project/view/screen_two/signup_view.dart';
+
 import '../../services/firebase_services.dart';
 
 class LoginView extends StatefulWidget {
@@ -28,7 +31,7 @@ class _LoginViewState extends State<LoginView> {
         ScaffoldMessenger.of(
           context,
         ).showSnackBar(const SnackBar(content: Text("Login Successful")));
-        Navigator.pushReplacementNamed(context, '/home');
+        AppRouter.pushReplacement(HomeView());
       }
     } catch (e) {
       if (!mounted) return;
